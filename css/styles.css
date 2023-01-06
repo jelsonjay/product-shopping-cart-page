@@ -45,62 +45,53 @@ body {
 }
 
 /*======HEADER=======*/
-header .top {
-  display: flex;
-  width: 100%;
-  background-color: #3e416b;
-  height: 5rem;
-  margin-bottom: 1.25rem;
-  padding: 0 1.25rem;
-  align-items: center;
-  justify-content: space-between;
+header {
+  /*------NAVBAR------*/
 }
-
-/*======NAVBAR=======*/
-nav {
+header nav {
   display: flex;
   justify-content: space-between;
   flex-direction: column;
   width: 100%;
-  height: 200px;
+  min-height: 200px;
   background-color: #1980e1;
   padding: 1.25rem;
   /*---WRAPPER---*/
 }
-nav .main-nav {
+header nav .main-nav {
   display: flex;
   align-items: center;
   justify-content: space-between;
 }
-nav .main-nav .logo {
+header nav .main-nav .logo {
   font-size: 2rem;
   font-weight: bold;
   text-transform: uppercase;
   color: #3e416b;
 }
-nav .main-nav p {
+header nav .main-nav p {
   font-size: 1.2rem;
   font-weight: bold;
   color: white;
 }
-nav .main-nav ul {
+header nav .main-nav ul {
   display: flex;
 }
-nav .main-nav ul li {
+header nav .main-nav ul li {
   padding: 0.7rem 1rem;
 }
-nav .main-nav ul li a {
+header nav .main-nav ul li a {
   font-size: 1.1rem;
   color: white;
   transition: all 0.5s ease;
 }
-nav .main-nav ul li a:hover {
+header nav .main-nav ul li a:hover {
   background-color: #3e416b;
   color: white;
   border-radius: 0.5rem;
   padding: 0.7rem 1rem;
 }
-nav .wrapper {
+header nav .wrapper {
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -108,20 +99,20 @@ nav .wrapper {
   /*----SEARCH----*/
   /*----CART----*/
 }
-nav .wrapper .dropdown {
+header nav .wrapper .dropdown {
   width: 130px;
   text-align: center;
   background-color: white;
   border-radius: 0.5rem;
 }
-nav .wrapper .dropdown select {
+header nav .wrapper .dropdown select {
   background: none;
   padding: 0.7rem 0.625rem 0.7rem 0;
   color: #3e416b;
   font-size: 1.2rem;
   cursor: pointer;
 }
-nav .wrapper .search {
+header nav .wrapper .search {
   width: 31.25rem;
   background-color: white;
   height: 2.8125rem;
@@ -131,11 +122,15 @@ nav .wrapper .search {
   justify-content: space-between;
   padding: 1rem;
 }
-nav .wrapper .search input {
-  width: 31rem;
+header nav .wrapper .search input {
+  width: 100%;
   height: 2rem;
 }
-nav .wrapper .cart {
+header nav .wrapper .search i {
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+header nav .wrapper .cart {
   display: flex;
   background-color: white;
   justify-content: space-between;
@@ -143,9 +138,9 @@ nav .wrapper .cart {
   padding: 0.7rem 0.625rem;
   border-radius: 0.5rem;
   width: 5rem;
-  font-size: 1.125rem;
+  font-size: 1.5rem;
 }
-nav .wrapper span {
+header nav .wrapper span {
   height: 1.375rem;
   width: 1.375rem;
   display: flex;
@@ -164,6 +159,7 @@ main h1 {
   text-transform: capitalize;
   margin-bottom: 2rem;
   position: relative;
+  margin-top: 2rem;
 }
 main h1::after {
   content: "";
@@ -197,8 +193,8 @@ section aside {
   padding: 1.25rem;
   text-align: center;
 }
-section aside .cart-head {
-  background-color: skyblue;
+section aside .head {
+  background-color: #1980e1;
   border-radius: 0.5rem;
   height: 2.5rem;
   padding: 0.625rem;
@@ -208,9 +204,10 @@ section aside .cart-head {
   align-items: center;
   justify-content: space-between;
 }
-section aside .cart-head p {
+section aside .head p {
   font-size: 2rem;
   font-weight: bold;
+  text-align: center;
 }
 section aside .cart-footer {
   display: flex;
@@ -221,31 +218,41 @@ section aside .cart-footer {
 }
 section .card {
   display: flex;
-  justify-content: space-between;
+  flex-wrap: wrap;
   padding: 1.25rem;
   border: 0.2rem solid #ccc;
   border-radius: 0.5rem;
 }
 section .body-img {
-  width: 50%;
+  width: 100%;
   height: 170px;
   display: flex;
   align-items: center;
   justify-content: center;
 }
 section .content {
-  width: 50%;
+  width: 100%;
   display: flex;
   flex-direction: column;
-  text-align: right;
+  text-align: center;
   justify-content: space-evenly;
-  margin-left: 3.75rem;
+}
+section .content h2 {
+  font-size: 1.3rem;
+  font-weight: 700;
+  margin-top: 0.9rem;
+}
+section .content span {
+  font-size: 1rem;
+  opacity: 0.8;
+  margin-top: 0.9rem;
 }
 section button {
   font-size: 1.2rem;
   padding: 0.625rem 1.25rem;
   background-color: #1980e1;
-  border-radius: 0.5rem;
+  border-radius: 5rem;
+  margin-top: 0.9rem;
   color: white;
   cursor: pointer;
   transition: all 0.5s ease-in-out;
@@ -278,24 +285,47 @@ section .cart-item .rowimg {
   border-radius: 50%;
 }
 section .cart-item .bxs-trash {
-  color: #3e416b;
+  color: #c55959;
   cursor: pointer;
+  font-size: 2rem;
 }
 
-/*------MEDIA QUERY------*/
+/*=====MEDIA QUERY=====*/
+@media (max-width: 968px) {
+  /*---WRAPPER--*/
+  section {
+    flex-wrap: wrap;
+  }
+  section .card-container {
+    width: 100%;
+    grid-template-columns: repeat(2, 1fr);
+  }
+  section aside {
+    width: 100%;
+    margin-top: 1rem;
+  }
+}
 @media (max-width: 768px) {
   /*---WRAPPER--*/
-  .wrapper {
-    flex-direction: column;
-  }
-
   section {
-    flex-direction: column;
+    flex-wrap: wrap;
+  }
+  section .card-container {
     width: 100%;
+    grid-template-columns: 1fr;
+  }
+  section aside {
+    width: 100%;
+    margin-left: 0;
   }
 
-  .card-container {
-    grid-template-columns: 1fr;
+  .wrapper {
+    flex-wrap: wrap;
+  }
+
+  .search input {
+    width: 100%;
+    height: 2rem;
   }
 }
 

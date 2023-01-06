@@ -20,7 +20,7 @@ const product = [
 	{
 		id: 4,
 		title: 'Macbock Air',
-		price: 1222,
+		price: 122,
 		images: './images/macbook-air.png'
 	}
 ];
@@ -46,13 +46,12 @@ container.innerHTML = categories
     <img src=${images} alt=${title}/>
     </div>
     <div class="content">
-    <p>${title}</p>
-    <span>${price}</span>
-      <button onclick='addToCart(${id})'>Add to cart</button> 
-      
-</div>
+    <h2>${title}</h2>
+    <span>£ ${price}.00</span>
+    <button onclick='addToCart(${id})'>Add to cart</button> 
+    </div>
 
-</div>
+    </div>
 `;
 	})
 	.join('');
@@ -68,16 +67,15 @@ function addToCart(id) {
 function removeItem(id) {
 	cart.splice(id, 1);
 	showCart();
+	console.log(id);
 }
 
 function showCart() {
-	let k = 0,
-		total = 0;
-
+	let total = 0;
 	document.querySelector('.count').innerHTML = cart.length;
 	if (cart.length === 0) {
 		document.querySelector('.cartItem').innerHTML = 'The cart is empty';
-		document.querySelector('#total').innerHTML = `£ ${0}.00`;
+		document.querySelector('#total').innerHTML = `£ ${id}.00`;
 	} else {
 		document.querySelector('.cartItem').innerHTML = cart
 			.map(item => {
