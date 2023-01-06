@@ -83,13 +83,13 @@ function showCart() {
 	document.querySelector('.count').innerHTML = cart.length;
 	if (cart.length === 0) {
 		document.querySelector('.cartItem').innerHTML = 'The cart is empty';
-		document.querySelector('#total').innerHTML = "£ '+0+'.00";
+		document.querySelector('#total').innerHTML = '£ ' + 0 + '.00';
 	} else {
 		document.querySelector('.cartItem').innerHTML = cart
 			.map(item => {
 				const { id, images, title, price } = item;
 				total = total + price;
-				document.querySelector('#total').innerHTML = "£ '+total+'.00";
+				document.querySelector('#total').innerHTML = '£ ' + total + '.00';
 				return (
 					`
           <div class="cart-item">
