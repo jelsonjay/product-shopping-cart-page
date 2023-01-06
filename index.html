@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Ecommerce Website | Product Page Design</title>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<!--boxicons-->
+		<link
+			href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css"
+			rel="stylesheet"
+		/>
+		<!--local css-->
+		<link rel="stylesheet" href="./css/styles.css" />
+	</head>
+	<div class="container">
+		<header>
+			<nav>
+				<div class="main-nav">
+					<div class="logo">logo</div>
+					<ul>
+						<li><a href="#">Store</a></li>
+						<li><a href="#">Product</a></li>
+						<li><a href="#">New</a></li>
+						<li><a href="#">Blog</a></li>
+					</ul>
+				</div>
+				<div class="wrapper">
+					<div class="dropdown">
+						<select name="">
+							<option value="1">All</option>
+							<option value="2">Laptop</option>
+							<option value="3">Tablet</option>
+							<option value="4">iphone</option>
+							<option value="5">Computer</option>
+						</select>
+					</div>
+
+					<div class="search">
+						<input
+							type="text"
+							placeholder="search product...."
+							id="input-search"
+						/>
+						<i class="bx bx-search-alt-2"></i>
+					</div>
+
+					<div class="cart">
+						<i class="bx bxs-cart"></i><span class="count">0</span>
+					</div>
+				</div>
+			</nav>
+		</header>
+
+		<main>
+			<h1>Product</h1>
+			<section>
+				<div class="card-container">
+					<!----card img--->
+				</div>
+				<aside class="sidebar">
+					<div class="cart-head"><p>My Cart</p></div>
+					<div class="cartItem">cart is empty</div>
+					<div class="cart-footer">
+						<h4>Total</h4>
+						<h3 id="total">£ 0.00</h3>
+					</div>
+				</aside>
+			</section>
+		</main>
+	</div>
+	<body>
+		<div id="app"></div>
+
+		<script src="./js/app.js"></script>
+	</body>
+</html>
