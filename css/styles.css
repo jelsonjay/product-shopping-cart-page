@@ -66,8 +66,11 @@ header nav .main-nav {
 header nav .main-nav .logo {
   font-size: 2rem;
   font-weight: bold;
-  text-transform: uppercase;
+  text-transform: capitalize;
   color: #3e416b;
+}
+header nav .main-nav .logo span {
+  color: orange;
 }
 header nav .main-nav p {
   font-size: 1.2rem;
