@@ -296,12 +296,14 @@ section .cart-item .bxs-trash {
 /*=====MEDIA QUERY=====*/
 @media (max-width: 968px) {
   /*---WRAPPER--*/
-  section {
-    flex-wrap: wrap;
-  }
   section .card-container {
     width: 100%;
     grid-template-columns: repeat(2, 1fr);
+  }
+  section .wrapper {
+    display: grid;
+    row-gap: 1rem;
+    gap: 1rem;
   }
   section aside {
     width: 100%;

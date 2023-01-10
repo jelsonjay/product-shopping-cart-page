@@ -25,6 +25,7 @@ const product = [
 	}
 ];
 
+// ======== GET DATA FROM ARRAY =========
 const categories = [
 	...new Set(
 		product.map(product => {
@@ -37,6 +38,7 @@ let i = 0;
 
 let container = document.querySelector('.card-container');
 
+// ======== START =========
 container.innerHTML = categories
 	.map(item => {
 		let { id, title, price, images } = item;
@@ -64,19 +66,19 @@ container.innerHTML = categories
 
 let cart = [];
 
+// ======== ADD PRODUCT TO CART =========
 function addToCart(e) {
 	cart.push({ ...categories[e] });
 	showCart();
 	console.log(e);
 }
-
-// remove item from cart
+// ======== REMOVE PRODUCT FROM CART =========
 function removeItem(j) {
 	cart.splice(j, 1);
 	showCart();
 	console.log(j);
 }
-
+// ======== SHOW CART =========
 function showCart() {
 	let total = 0;
 	let g = 0;
