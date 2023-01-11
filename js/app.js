@@ -1,30 +1,3 @@
-const product = [
-	{
-		id: 1,
-		title: 'Luois Vitton Bag',
-		price: 1527,
-		images: './images/bag-4.png'
-	},
-	{
-		id: 2,
-		title: 'Nike',
-		price: 127,
-		images: './images/nike-1.png'
-	},
-	{
-		id: 3,
-		title: 'Mac Pro 32 inch',
-		price: 2527,
-		images: './images/apple-mac.png'
-	},
-	{
-		id: 4,
-		title: 'Macbock Air',
-		price: 122,
-		images: './images/macbook-air.png'
-	}
-];
-
 // ======== GET DATA FROM ARRAY =========
 const categories = [
 	...new Set(
@@ -38,7 +11,7 @@ let i = 0;
 
 let container = document.querySelector('.card-container');
 
-// ======== START =========
+// ========HTML COMPONENT=========
 container.innerHTML = categories
 	.map(item => {
 		let { id, title, price, images } = item;
@@ -66,19 +39,19 @@ container.innerHTML = categories
 
 let cart = [];
 
-// ======== ADD PRODUCT TO CART =========
+// ========ADD PRODUCT TO CART=========
 function addToCart(e) {
 	cart.push({ ...categories[e] });
 	showCart();
-	console.log(e);
+	//console.log(e);
 }
-// ======== REMOVE PRODUCT FROM CART =========
+// ========REMOVE PRODUCT FROM CART=========
 function removeItem(j) {
 	cart.splice(j, 1);
 	showCart();
 	console.log(j);
 }
-// ======== SHOW CART =========
+// ========SHOW CART=========
 function showCart() {
 	let total = 0;
 	let g = 0;
@@ -89,7 +62,7 @@ function showCart() {
 	} else {
 		document.querySelector('.cartItem').innerHTML = cart
 			.map(item => {
-				const { id, images, title, price } = item;
+				const { images, title, price } = item;
 				total = total + price;
 				document.querySelector('#total').innerHTML = '£ ' + total + '.00';
 				return (
@@ -107,4 +80,12 @@ function showCart() {
 			})
 			.join('');
 	}
+}
+
+// ========SELECT ITEMS=========
+function getSelectedItems() {
+	document.querySelector('#msg').innerHTML =
+		'The selected value is :<b style="color:red;">' +
+		form.items[form.items.selectedIndex].text +
+		'</b>';
 }
