@@ -17,7 +17,7 @@
 		<header>
 			<nav>
 				<div class="main-nav">
-					<div class="logo"><span>B</span>rand</div>
+					<div class="logo"><span>S</span>tore</div>
 					<ul>
 						<li><a href="#">Store</a></li>
 						<li><a href="#">Product</a></li>
@@ -27,14 +27,17 @@
 				</div>
 				<div class="wrapper">
 					<div class="dropdown">
-						<select name="">
-							<option value="1">All</option>
-							<option value="2">Laptop</option>
-							<option value="3">Tablet</option>
-							<option value="4">iphone</option>
-							<option value="5">Computer</option>
-						</select>
+						<form name="form">
+							<select name="items" onchange="getSelectedItems()">
+								<option>--Select Item</option>
+								<option value="laptop">Laptop</option>
+								<option value="tablet">Tablet</option>
+								<option value="iphone">iphone</option>
+								<option value="computer">Computer</option>
+							</select>
+						</form>
 					</div>
+					<label id="msg"></label>
 
 					<div class="search">
 						<input
@@ -72,6 +75,7 @@
 	<body>
 		<div id="app"></div>
 
+		<script src="./js/product.js"></script>
 		<script src="./js/app.js"></script>
 	</body>
 </html>
